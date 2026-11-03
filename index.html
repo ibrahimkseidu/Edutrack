@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTrack GPS - School Digital Attendance</title>
+    <title>School Digital Attendance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,7 +64,7 @@
                     </div>
                     <div>
                         <span class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-                            EduTrack <span class="bg-blue-500/20 text-blue-400 text-xs px-2 py-0.5 rounded-full border border-blue-500/30 font-medium">MySQL + PHP</span>
+                            Students Attendance Trucker<span class="bg-blue-500/20 text-blue-400 text-xs px-2 py-0.5 rounded-full border border-blue-500/30 font-medium">I&D</span>
                         </span>
                         <p class="text-xs text-slate-400 hidden sm:block">Campus Geofenced Attendance Platform</p>
                     </div>
@@ -76,7 +76,7 @@
                         <i class="fa-solid fa-user-graduate"></i> Student Check-In
                     </button>
                     <button onclick="switchTab('dashboard')" id="nav-dashboard" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-slate-300 hover:text-white flex items-center gap-2">
-                        <i class="fa-solid fa-chart-pie"></i> Teacher Dashboard
+                        <i class="fa-solid fa-chart-pie"></i> Teachers Dashboard
                     </button>
                     <button onclick="switchTab('geofence')" id="nav-geofence" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-slate-300 hover:text-white flex items-center gap-2">
                         <i class="fa-solid fa-location-dot"></i> Campus Geofence
@@ -86,7 +86,7 @@
                 <!-- Backend Connection Status Badge -->
                 <div class="flex items-center space-x-2">
                     <span id="backend-status" class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-3 py-1.5 rounded-xl font-medium flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></i> PHP Ready
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></i> LIVE
                     </span>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                     <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                         <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span> Live Student Attendance Entry
                     </div>
-                    <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Geofenced Class Check-In</h1>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Class Check-In</h1>
                     <p class="text-slate-600 text-sm sm:text-base">Enter your details and verify your live campus location to record attendance.</p>
                 </div>
 
@@ -116,13 +116,13 @@
                         <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5">
                             Full Name
                         </label>
-                        <input type="text" id="input-student-name" placeholder="e.g. Alex Morgan" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+                        <input type="text" id="input-student-name" placeholder="e.g. Doreen Appiah" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
                     </div>
 
                     <!-- Student ID Code Input -->
                     <div>
                         <label class="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1.5">
-                            Student ID Code
+                            Student ID
                         </label>
                         <input type="text" id="input-student-id" placeholder="e.g. STU-1001" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
                     </div>
@@ -133,9 +133,15 @@
                             Select Active Class Session
                         </label>
                         <select id="course-select" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
-                            <option value="CS101">CS101 - Intro to Computer Science</option>
+                            <option value="CS101">CS101 - Intro Artificial Interligent</option>
                             <option value="MATH201">MATH201 - Advanced Calculus</option>
-                            <option value="HIST102">HIST102 - World History</option>
+                            <option value="HIST102">HCS402 - E- Commerce</option>
+                            <option value="CS101">CS350 - Leadership</option>
+                            <option value="MATH201">MACS251 - Management</option>
+                            <option value="HIST102">HIST411 - Intro Human Computer Interraction</option>
+                            <option value="CS101">ESCS230 - Economics</option>
+                            <option value="MATH201">CSCP335 - Advanced Database</option>
+                            <option value="HIST102">CSCP229 - Software Engineering</option>
                         </select>
                     </div>
 
@@ -143,7 +149,7 @@
                     <div class="bg-white p-4 rounded-xl border border-slate-200 flex flex-col items-center">
                         <div class="w-full flex items-center justify-between mb-2">
                             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-                                <i class="fa-solid fa-radar text-blue-600"></i> GPS Geofence Radar
+                                <i class="fa-solid fa-radar text-blue-600"></i> GPS Radar
                             </span>
                             <span id="gps-status-badge" class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-0.5 rounded-full border border-slate-200">
                                 Ready for Verification
@@ -153,7 +159,7 @@
                             <canvas id="radarCanvas" width="400" height="160" class="w-full h-full object-cover"></canvas>
                         </div>
                         <div id="distance-readout" class="mt-3 text-center text-xs text-slate-500 font-medium">
-                            Click button below to trigger live browser GPS & send data to <code class="text-blue-600 font-semibold">check-in.php</code>.
+                            Please click button below to trigger live browser GPS to send your location.<code class="text-blue-600 font-semibold"></code>.
                         </div>
                     </div>
 
@@ -170,7 +176,7 @@
         <section id="view-dashboard" class="tab-view space-y-6 hidden">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
-                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Present</span>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Students Present</span>
                     <div class="text-2xl font-bold text-slate-900 mt-1" id="stat-present">0</div>
                 </div>
                 <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
@@ -178,7 +184,7 @@
                     <div class="text-2xl font-bold text-slate-900 mt-1" id="stat-late">0</div>
                 </div>
                 <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
-                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Outside Geofence</span>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Outside Campus</span>
                     <div class="text-2xl font-bold text-slate-900 mt-1" id="stat-flagged">0</div>
                 </div>
                 <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
@@ -201,7 +207,7 @@
                                 <th class="py-3 px-4">Student Name / ID</th>
                                 <th class="py-3 px-4">Course</th>
                                 <th class="py-3 px-4">Time</th>
-                                <th class="py-3 px-4">Distance</th>
+                                <th class="py-3 px-4">Distance From Campus</th>
                                 <th class="py-3 px-4">Status</th>
                             </tr>
                         </thead>
@@ -233,7 +239,7 @@
                         <input type="number" id="conf-radius" value="200" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm font-mono">
                     </div>
                     <button onclick="saveCampusConfig()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 rounded-xl transition">
-                        Save Campus Geofence Settings
+                        Save Settings
                     </button>
                 </div>
             </div>
@@ -302,7 +308,7 @@
             const btn = document.getElementById('btn-checkin');
 
             if (!name || !studentId) {
-                showToast("Please enter your Full Name and Student ID Code.", "error");
+                showToast("Please enter your Full Name and Student ID, Thank you!.", "error");
                 return;
             }
 
@@ -369,8 +375,8 @@
             btn.disabled = false;
             btn.innerHTML = `<i class="fa-solid fa-location-arrow"></i> Verify Location & Check In`;
             
-            const simulatedDistance = 45; // meters inside campus
-            showToast(`[Demo Mode] Check-In Successful for ${name}! Distance: ${simulatedDistance}m`, "success");
+            const simulatedDistance = 0; // meters inside campus
+            showToast(`Thank you, ${name} for Comming today,Please your Distance is: ${simulatedDistance}m`, "success");
 
             localAttendanceLogs.unshift({
                 name: name,
@@ -410,7 +416,7 @@
         }
 
         function saveCampusConfig() {
-            showToast("Campus geofence boundaries saved successfully!", "success");
+            showToast("Loaction saved successfully!", "success");
             switchTab('student');
         }
 
